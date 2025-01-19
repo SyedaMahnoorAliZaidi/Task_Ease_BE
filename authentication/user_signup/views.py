@@ -42,3 +42,28 @@ class CreateUserAPIView(APIView):
 
 
 
+
+# class Login(APIView):
+#     def post(self, request):
+#         email_from_request = request.data.get("email")
+#         password = request.data.get("password")
+
+#         if not email_from_request or not password:
+#             return Response({"error": "Please provide both email and password"}, status=status.HTTP_400_BAD_REQUEST)
+
+#         try:
+#             user = Customer.objects.filter(status="active")
+#             role = "Customer"
+#         except Customer.DoesNotExist:
+#             try:
+#                 user = Expert.objects.get(email=email_from_request)
+#                 role = "Expert"
+#             except Expert.DoesNotExist:
+#                 return Response({"error": "Invalid email"}, status=status.HTTP_400_BAD_REQUEST)
+
+#         if not user.check_password(password):
+#             return Response({"error": "Invalid password"}, status=status.HTTP_400_BAD_REQUEST)
+
+#         return Response({"message": f"{role} logged in successfully"}, status=status.HTTP_200_OK)
+
+
